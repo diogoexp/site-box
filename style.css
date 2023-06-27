@@ -1,0 +1,169 @@
+/* Redefinindo a margem, pois alguns navegadores têm sua própria margem definida */
+body {
+    margin: 0 auto;
+    font-family: Helvetica;
+}
+
+.zone {
+    color:#FFF;
+    font-size:2em;
+    border-radius:4px;
+    transition: all 0.3s linear;
+    background-color: rgb(80, 82, 94);
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+.main-nav {
+    display: flex;
+    margin: auto;
+    background-color: rgb(80, 82, 94);
+    height: 8vh;
+    align-items: center;
+    border-radius: 1px;
+}
+
+a:hover {
+}
+
+/*
+    Ao alterar o tamanho da largura, vemos algum corte de navegação, então precisamos modificar como ficará quando a largura for menor
+*/
+@media only screen and (max-width: 600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 10px;
+    }
+}
+
+/*
+    isso empurra  'contato' totalmente para a direita.
+    margin-left auto, cria automaticamente uma margem esquerda máxima para o div
+*/
+.push {
+    margin-left: auto;
+}
+
+li {
+    text-align: center;
+    list-style:none;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    padding: 14px 20px;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.container {
+/* vh = altura da vista. Fazemos isso para garantir que o banner preencha toda a visualização */
+    height: 100vh;
+}
+
+.cover {
+    width: 100%;
+}
+/*
+    Gostaríamos que o texto aparecesse no centro da imagem e acima dela.
+ */
+.coverText {
+    transform: translate(40%, -100%);
+}
+
+.coverText > h1 {
+    color: #FFF;
+    font-size: 50px;
+}
+
+/***********************************************************************
+ *  Body card grid
+ **********************************************************************/
+/*
+    Vamos criar uma grade de blocos, então usaremos a grade desta vez.
+    grid-template-columns define o estilo de cada coluna (ou div). FYI: Se definissemos apenas 1fr, veríamos apenas um bloco por coluna.
+    Então, configuramos para repetir (assim como digitar 1fr 1fr ...) e preencher automaticamente a tela com qualquer coisa de min 350px a tela inteira (1fr)
+    Finalmente, definimos um gap de grade de 20px (padding like)
+*/
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 30px;
+    float: left;
+    padding: 50px;
+}
+
+.card {
+    background-color: rgb(77, 76, 76);
+}
+
+/*
+Queremos garantir que a imagem preencha toda a caixa, portanto, definimos a largura em 100%.
+Queremos apenas manipular imagens dentro da caixa de classe.
+*/
+
+.card > img {
+    width: 100%;
+}
+
+.card h1 {
+    font-size: 50px;
+}
+
+.card p {
+    font-size: 50px;
+}
+
+/*
+    Definimos o preenchimento ao redor do texto dentro do cartão (ao contrário da imagem que deve ser espalhada em 100% da largura)
+*/
+.card > .text {
+    padding: 0 20px 20px;
+}
+
+/*
+    Por fim, definimos o design do botão que aparece dentro de cada cartão.
+ */
+button {
+    background-color: #5f6260; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    width: 100%;
+}
+
+button:hover {
+
+}
+
+/***********************************************************************
+ *  Footer
+ **********************************************************************/
+footer {
+   padding: 10px;
+   display: grid;
+}
+
+footer p {
+    text-align: center;
+}
+
+/***********************************************************************
+ *  Blue Background
+ **********************************************************************/
+.blue {
+    background-color: blue;
+}
+
